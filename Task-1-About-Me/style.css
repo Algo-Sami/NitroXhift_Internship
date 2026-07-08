@@ -1,0 +1,298 @@
+/* ==========================================================================
+   PREMIUM PORTFOLIO STYLESHEET - SAMI ULLAH
+   Strict Compliance: No Flexbox, No Grid, No CSS Frameworks, No Animations,
+   No Media Queries. Standard HTML/CSS flow only.
+   ========================================================================== */
+
+/* --- Document Reset & Base Styles --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #334155; /* Dark gray text */
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Layout Container --- */
+.container {
+  width: 720px; /* Fixed width for classic desktop alignment, no media queries */
+  margin: 60px auto; /* Centered with generous vertical breathing room */
+  padding: 0;
+}
+
+/* --- Header Section --- */
+header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.profile-image {
+  display: block;
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  object-position: center top; /* Frame the face/top of portrait photos */
+  border-radius: 50%; /* Perfect circular shape */
+  border: 1px solid #e2e8f0; /* Thin border */
+  margin: 0 auto 20px auto; /* Centered with bottom margin */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.header-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a; /* Dark navy heading */
+  margin: 0 0 10px 0;
+  letter-spacing: -0.02em;
+}
+
+.header-titles {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #64748b; /* Medium slate gray subtext */
+  margin: 0 0 25px 0;
+  letter-spacing: 0.08em;
+}
+
+.header-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #475569;
+  margin: 0 auto;
+  max-width: 660px;
+}
+
+/* --- Main Content Sections --- */
+.content-section {
+  background-color: #f8fafc; /* Very light gray section background */
+  border: 1px solid #e2e8f0; /* Subtle border */
+  border-radius: 10px; /* Elegant slightly rounded corners */
+  padding: 40px; /* Generous inside spacing */
+  margin-bottom: 40px; /* Vertical gap between sections */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04); /* Soft shadow */
+}
+
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0f172a; /* Dark navy heading */
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e2e8f0; /* Underline divider */
+}
+
+/* --- Section-Specific Layouts --- */
+
+/* About Me Paragraph Spacing */
+#about-section p {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: justify; /* Editorial feel */
+}
+
+#about-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Lists styling */
+.journey-list,
+.skills-list,
+.goals-list {
+  margin: 0;
+  padding-left: 20px; /* Standard indentation */
+}
+
+.journey-list li,
+.skills-list li,
+.goals-list li {
+  margin-bottom: 12px;
+  color: #475569;
+}
+
+.journey-list li:last-child,
+.skills-list li:last-child,
+.goals-list li:last-child {
+  margin-bottom: 0;
+}
+
+.journey-list strong {
+  color: #0f172a;
+}
+
+/* Featured Project Styling */
+.project-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  margin: 0;
+  color: #475569;
+}
+
+/* --- Quote Section --- */
+.quote-section {
+  text-align: center;
+  margin: 50px 0;
+  padding: 0 20px;
+}
+
+.motivational-quote {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  font-weight: 500;
+  color: #0f172a;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.motivational-quote::before {
+  content: "“";
+  font-family: Georgia, serif;
+  font-size: 3rem;
+  line-height: 0;
+  vertical-align: -0.4em;
+  margin-right: 8px;
+  color: #cbd5e1;
+}
+
+.motivational-quote::after {
+  content: "”";
+  font-family: Georgia, serif;
+  font-size: 3rem;
+  line-height: 0;
+  vertical-align: -0.4em;
+  margin-left: 5px;
+  color: #cbd5e1;
+}
+
+/* --- Contact Form --- */
+.contact-form {
+  margin: 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group:last-of-type {
+  margin-bottom: 25px;
+}
+
+.form-label {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-input,
+.form-textarea {
+  display: block;
+  width: 100%; /* Spans full content width */
+  padding: 12px 16px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.95rem;
+  color: #0f172a;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+}
+
+.form-textarea {
+  height: 130px;
+  resize: vertical; /* Allow vertical resizing only */
+}
+
+/* Focus States for Form Inputs */
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #0f172a;
+  box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08); /* Soft navy focus outline */
+}
+
+/* Submit Button */
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #0f172a; /* Dark navy button background */
+  border: 1px solid #0f172a;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #1e293b;
+  border-color: #1e293b;
+}
+
+.submit-button:active {
+  background-color: #0f172a;
+}
+
+/* --- Footer Section --- */
+footer {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0 0 10px 0;
+}
+
+.footer-links {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  color: #cbd5e1;
+  margin: 0 10px;
+}
+
+.footer-subtext {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-style: italic;
+  margin: 0;
+}
