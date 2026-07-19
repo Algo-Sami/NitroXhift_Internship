@@ -1,0 +1,13 @@
+// UI Primitives — barrel export
+export { Container } from './Container'
+export { SectionWrapper } from './SectionWrapper'
+export { Heading } from './Heading'
+export { Button, LinkButton, buttonVariants } from './Button'
+export { Badge } from './Badge'
+export { Card, CardHeader, CardBody, CardFooter } from './Card'
+export { AnimateIn } from './AnimateIn'
+export { GradientText } from './GradientText'
+export { Divider } from './Divider'
+export { Typewriter } from './Typewriter'
+export { Counter } from './Counter'
+export { GitHubIcon, LinkedInIcon } from './BrandIcons'

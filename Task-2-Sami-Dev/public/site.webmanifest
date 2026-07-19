@@ -1,0 +1,27 @@
+{
+  "name": "SAMI ULLAH — Portfolio",
+  "short_name": "Sami Ullah",
+  "description": "Full Stack Developer & AI Enthusiast. Building elegant, high-performance web applications.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0B1120",
+  "theme_color": "#2563EB",
+  "lang": "en",
+  "categories": ["portfolio", "technology", "software"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+@import "tailwindcss";
+
+/* ─── Google Fonts ──────────────────────────────────────────────────────────── */
+/* Loaded via next/font in lib/fonts.ts — no @import needed here */
+
+/* ─── CSS Custom Properties — Design Tokens ─────────────────────────────────── */
+
+:root {
+  /* Brand */
+  --color-primary:   #2563EB;
+  --color-secondary: #7C3AED;
+  --color-accent:    #06B6D4;
+
+  /* Semantic */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error:   #EF4444;
+
+  /* Light mode surfaces */
+  --background:         #F8FAFC;
+  --foreground:         #0A0F1A;
+  --card:               #FFFFFF;
+  --card-foreground:    #0A0F1A;
+  --muted:              #F1F5F9;
+  --muted-foreground:   #64748B;
+  --border:             #E2E8F0;
+  --input:              #E2E8F0;
+  --ring:               #2563EB;
+
+  /* Border radii */
+  --radius-button:  14px;
+  --radius-input:   14px;
+  --radius-card:    20px;
+  --radius-image:   24px;
+  --radius-section: 32px;
+
+  /* Font families (set by next/font) */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+}
+
+/* ─── Dark Mode Tokens ───────────────────────────────────────────────────────── */
+
+.dark {
+  --background:       #0B1120;
+  --foreground:       #F0F4FF;
+  --card:             #111827;
+  --card-foreground:  #F0F4FF;
+  --muted:            #1A2333;
+  --muted-foreground: #64748B;
+  --border:           #1E2A3B;
+  --input:            #1E2A3B;
+  --ring:             #3B82F6;
+}
+
+/* ─── Tailwind Theme Mapping ─────────────────────────────────────────────────── */
+
+@theme inline {
+  --color-background:       var(--background);
+  --color-foreground:       var(--foreground);
+  --color-card:             var(--card);
+  --color-card-foreground:  var(--card-foreground);
+  --color-muted:            var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border:           var(--border);
+  --color-input:            var(--input);
+  --color-ring:             var(--ring);
+  --color-primary:          var(--color-primary);
+  --color-secondary:        var(--color-secondary);
+  --color-accent:           var(--color-accent);
+  --color-success:          var(--color-success);
+  --color-warning:          var(--color-warning);
+  --color-error:            var(--color-error);
+
+  --font-heading: var(--font-heading);
+  --font-body:    var(--font-body);
+  --font-mono:    var(--font-mono);
+
+  --radius-sm: 10px;
+  --radius:    var(--radius-button);
+  --radius-md: var(--radius-card);
+  --radius-lg: var(--radius-image);
+  --radius-xl: var(--radius-section);
+}
+
+/* ─── Base Reset & Globals ───────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Clear fixed navbar */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Typography base */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  text-wrap: balance; /* prevent awkward single-word last lines */
+}
+
+p {
+  text-wrap: pretty; /* improves paragraph line breaking */
+}
+
+code, pre, kbd, samp {
+  font-family: var(--font-mono);
+}
+
+/* Focus styles — visible ring for keyboard nav */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Remove focus for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ─── Selection ──────────────────────────────────────────────────────────────── */
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-primary) 25%, transparent);
+  color: var(--foreground);
+}
+
+/* ─── Custom Scrollbar ───────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* ─── Reduced Motion ─────────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Utility: Gradient Text ─────────────────────────────────────────────────── */
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 50%,
+    var(--color-accent) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── Utility: Glass Surface ─────────────────────────────────────────────────── */
+
+.glass {
+  background: color-mix(in srgb, var(--card) 5%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid color-mix(in srgb, var(--foreground) 8%, transparent);
+}
+
+/* ─── Utility: Noise Texture ─────────────────────────────────────────────────── */
+
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+/* ─── Utility: Glow ──────────────────────────────────────────────────────────── */
+
+.glow-primary {
+  box-shadow: 0 0 40px color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 40px color-mix(in srgb, var(--color-secondary) 15%, transparent);
+}
+
+/* ─── Skip to Main Content (Accessibility) ───────────────────────────────────── */
+
+.skip-to-main {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: var(--color-primary);
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+
+/* ─── Utility: Back-to-Top & FAB buttons ────────────────────────────────────── */
+
+.fab {
+  will-change: transform;
+}
+
+/* ─── Touch targets — minimum 44×44px for WCAG 2.1 SC 2.5.5 ─────────────────── */
+
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
+}
